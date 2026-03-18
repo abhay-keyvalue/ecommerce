@@ -43,66 +43,85 @@ ecommerce/
 - Node.js 18+ 
 - PostgreSQL 14+
 - npm or yarn
+- Docker (for PostgreSQL database)
 
-### Backend Setup
+### Quick Start (Recommended)
 
-1. Navigate to backend directory:
+Run the automated setup script:
 ```bash
-cd oms-backend
+./setup.sh
 ```
 
-2. Install dependencies:
+Then start both frontend and backend together:
 ```bash
-npm install
+npm run dev
 ```
 
-3. Create `.env` file from template:
+That's it! The frontend will run on `http://localhost:5173` and backend on `http://localhost:3000`
+
+### Manual Setup
+
+If you prefer to set up manually:
+
+1. Install all dependencies:
 ```bash
-cp .env.example .env
+npm run install:all
 ```
 
-4. Update `.env` with your database credentials
-
-5. Start PostgreSQL database (using Docker):
+2. Create `.env` files from templates:
 ```bash
-docker-compose up -d
+cp oms-backend/.env.example oms-backend/.env
+cp frontend/.env.example frontend/.env
 ```
 
-6. Run database migrations and seed data:
+3. Update `oms-backend/.env` with your database credentials
+
+4. Start PostgreSQL database:
+```bash
+npm run db:up
+```
+
+5. Seed the database:
 ```bash
 npm run seed
 ```
 
-7. Start the development server:
+6. Start both servers:
 ```bash
 npm run dev
 ```
 
-Backend will run on `http://localhost:3000`
+### Available Scripts
 
-### Frontend Setup
+From the root directory:
 
-1. Navigate to frontend directory:
-```bash
-cd frontend
-```
+- `npm run dev` - Start both frontend and backend concurrently
+- `npm run dev:frontend` - Start only frontend
+- `npm run dev:backend` - Start only backend
+- `npm run build` - Build both frontend and backend
+- `npm run install:all` - Install dependencies for both projects
+- `npm run db:up` - Start PostgreSQL database
+- `npm run db:down` - Stop PostgreSQL database
+- `npm run db:reset` - Reset database (removes all data)
+- `npm run seed` - Seed database with sample products
+- `npm run test` - Run backend tests
+- `npm run lint` - Run frontend linter
+- `npm run setup` - Complete setup (install, start DB, seed)
 
-2. Install dependencies:
-```bash
-npm install
-```
+### Individual Project Commands
 
-3. Create `.env` file from template:
-```bash
-cp .env.example .env
-```
+**Backend** (`oms-backend/`):
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm start` - Run production build
+- `npm test` - Run tests
+- `npm run seed` - Seed database
 
-4. Start the development server:
-```bash
-npm run dev
-```
-
-Frontend will run on `http://localhost:5173`
+**Frontend** (`frontend/`):
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
 
 ## Database Schema
 

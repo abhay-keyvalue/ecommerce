@@ -1,0 +1,37 @@
+{
+  "name": "aavya-ethnic-couture",
+  "version": "1.0.0",
+  "description": "Women's Textile E-Store - Authentic Indian Ethnic Wear",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install --prefix frontend && npm install --prefix oms-backend",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\" --names \"backend,frontend\" --prefix-colors \"magenta,cyan\"",
+    "dev:backend": "npm run dev --prefix oms-backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "build": "npm run build --prefix frontend && npm run build --prefix oms-backend",
+    "build:frontend": "npm run build --prefix frontend",
+    "build:backend": "npm run build --prefix oms-backend",
+    "start:backend": "npm start --prefix oms-backend",
+    "start:frontend": "npm run preview --prefix frontend",
+    "seed": "npm run seed --prefix oms-backend",
+    "db:up": "cd oms-backend && docker-compose up -d",
+    "db:down": "cd oms-backend && docker-compose down",
+    "db:reset": "cd oms-backend && docker-compose down -v && docker-compose up -d",
+    "test": "npm test --prefix oms-backend",
+    "lint": "npm run lint --prefix frontend",
+    "setup": "npm run install:all && npm run db:up && npm run seed"
+  },
+  "keywords": [
+    "ecommerce",
+    "textile",
+    "ethnic-wear",
+    "sarees",
+    "lehengas",
+    "indian-fashion"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
