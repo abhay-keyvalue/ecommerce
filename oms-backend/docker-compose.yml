@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: oms-db
+    environment:
+      POSTGRES_USER: oms_user
+      POSTGRES_PASSWORD: oms_password
+      POSTGRES_DB: oms_database
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    container_name: oms-app
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: oms_user
+      DB_PASSWORD: oms_password
+      DB_NAME: oms_database
+      JWT_SECRET: supersecretjwtkey
+      PORT: 3000
+    depends_on:
+      - db
+    # In production, we'd copy the built files.
+    # We can omit volume mounting for the container build here,
+    # or expose env variables for local dev outside docker too.
+
+volumes:
+  postgres_data:
