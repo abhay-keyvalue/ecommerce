@@ -8,7 +8,13 @@ import productRoutes from './routes/productRoutes';
 import orderRoutes from './routes/orderRoutes';
 
 const app = express();
-app.use(cors());
+
+const corsOptions = {
+  origin: process.env.CORS_ORIGIN || 'http://localhost:5173',
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
