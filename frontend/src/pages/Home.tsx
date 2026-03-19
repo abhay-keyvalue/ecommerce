@@ -92,16 +92,16 @@ const Home: React.FC = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="flex flex-col items-center text-center gap-4 mb-12 py-8"
+        className="flex flex-col items-center text-center gap-4 mb-8 sm:mb-12 py-4 sm:py-8 px-4"
       >
-        <h1 className="text-5xl md:text-6xl font-display font-bold text-slate-900 tracking-tight mb-3">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-slate-900 tracking-tight mb-3">
           Timeless Elegance
         </h1>
-        <p className="text-xl md:text-2xl text-slate-600 max-w-3xl font-light leading-relaxed">
+        <p className="text-lg sm:text-xl md:text-2xl text-slate-600 max-w-3xl font-light leading-relaxed px-4 sm:px-0">
           Discover our exquisite collection of handcrafted ethnic wear. 
           From traditional sarees to contemporary fusion pieces, each garment tells a story of heritage and artistry.
         </p>
-        <div className="flex gap-3 mt-4">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mt-4">
           <span className="inline-flex items-center gap-2 bg-primary-50 text-primary-700 text-sm font-semibold px-4 py-2 rounded-full border border-primary-100">
             ✨ Authentic Craftsmanship
           </span>

@@ -14,9 +14,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ y: -8, boxShadow: "0 25px 50px -12px rgb(219 39 119 / 0.15)" }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className="bg-white rounded-3xl overflow-hidden shadow-md border border-primary-50 flex flex-col h-full hover:border-primary-200 transition-all group"
+      className="bg-white flex-col rounded-3xl overflow-hidden shadow-md border border-primary-50 flex h-full hover:border-primary-200 transition-all group"
     >
-      <div className="relative h-72 bg-gradient-to-br from-primary-50 to-accent-50 overflow-hidden">
+      <div className="relative h-64 sm:h-72 bg-gradient-to-br from-primary-50 to-accent-50 overflow-hidden">
         <img 
           src={product.image_url || 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&q=80'} 
           alt={product.name}
@@ -29,9 +29,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         )}
       </div>
       
-      <div className="flex-1 p-6 flex flex-col">
+      <div className="flex-1 p-4 sm:p-6 flex flex-col">
         <div className="flex justify-between items-start mb-3">
-          <h3 className="text-xl font-display font-bold text-slate-900 leading-tight flex-1 pr-2">
+          <h3 className="text-lg sm:text-xl font-display font-bold text-slate-900 leading-tight flex-1 pr-2">
             {product.name}
           </h3>
           <div className="flex flex-col items-end">

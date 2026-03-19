@@ -7,10 +7,10 @@ const Layout: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col font-sans">
       <Navbar />
-      <main className="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-12">
+      <main className="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
         <Outlet />
       </main>
-      <footer className="w-full bg-gradient-to-r from-primary-50 via-white to-accent-50 border-t border-primary-100 py-12 mt-16">
+      <footer className="w-full bg-gradient-to-r from-primary-50 via-white to-accent-50 border-t border-primary-100 py-8 sm:py-12 mt-8 sm:mt-16">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
