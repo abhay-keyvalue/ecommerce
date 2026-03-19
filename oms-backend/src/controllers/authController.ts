@@ -60,7 +60,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
 
     const secret = process.env.JWT_SECRET || 'supersecretjwtkey';
     const expiresIn = process.env.JWT_EXPIRES_IN || '24h';
-    const token = jwt.sign({ id: user.id, role: user.role }, secret, { expiresIn });
+    const token = jwt.sign({ id: user.id, role: user.role }, secret, { expiresIn: expiresIn as any });
 
     res.json({ token, user: { id: user.id, email: user.email, role: user.role } });
   } catch (error) {
