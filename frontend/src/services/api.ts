@@ -37,6 +37,16 @@ export const api = {
       return [];
     }
   },
+
+  getProductById: async (id: string): Promise<Product | null> => {
+    try {
+      const data = await apiFetch(`/products/${id}`);
+      return data;
+    } catch (error) {
+      console.error('Error fetching product:', error);
+      return null;
+    }
+  },
   
   login: async (credentials: any) => {
     return apiFetch('/auth/login', {
