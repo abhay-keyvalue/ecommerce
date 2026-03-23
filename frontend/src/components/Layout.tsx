@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import { Outlet } from 'react-router-dom';
 import { Heart } from 'lucide-react';
+import Chatbot from './Chatbot';
 
 const Layout: React.FC = () => {
   return (
@@ -46,6 +47,7 @@ const Layout: React.FC = () => {
           </div>
         </div>
       </footer>
+      <Chatbot />
     </div>
   );
 };

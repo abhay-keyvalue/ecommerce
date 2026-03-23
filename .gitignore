@@ -67,3 +67,11 @@ frontend/.vite/
 
 # Production
 *.production
+
+# AI Agent / Python specific
+ai-agent/venv/
+ai-agent/.env
+ai-agent/__pycache__/
+ai-agent/*.pyc
+ai-agent/.pytest_cache/
+ai-agent/.env

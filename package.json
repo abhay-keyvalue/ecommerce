@@ -5,9 +5,10 @@
   "private": true,
   "scripts": {
     "install:all": "npm install --prefix frontend && npm install --prefix oms-backend",
-    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\" --names \"backend,frontend\" --prefix-colors \"magenta,cyan\"",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\" \"npm run dev:ai-agent\" --names \"backend,frontend,ai-agent\" --prefix-colors \"magenta,cyan,yellow\"",
     "dev:backend": "npm run dev --prefix oms-backend",
     "dev:frontend": "npm run dev --prefix frontend",
+    "dev:ai-agent": "cd ai-agent && source venv/bin/activate && uvicorn app.main:app --reload --host 0.0.0.0 --port 8000",
     "build": "npm run build --prefix frontend && npm run build --prefix oms-backend",
     "build:frontend": "npm run build --prefix frontend",
     "build:backend": "npm run build --prefix oms-backend",
