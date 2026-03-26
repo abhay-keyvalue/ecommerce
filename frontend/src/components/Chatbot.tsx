@@ -35,8 +35,8 @@ const Chatbot: React.FC = () => {
     setIsLoading(true);
 
     try {
-      // Calling the backend AI agent
-      const response = await fetch('http://localhost:8000/chat', {
+      const aiAgentUrl = import.meta.env.VITE_AI_AGENT_URL || 'http://localhost:8000';
+      const response = await fetch(`${aiAgentUrl}/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

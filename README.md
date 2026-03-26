@@ -8,16 +8,19 @@ A modern e-commerce platform for authentic Indian ethnic wear, featuring sarees,
 ecommerce/
 ├── frontend/          # React + Vite + Tailwind CSS
 ├── oms-backend/       # Node.js + Express + TypeORM + PostgreSQL
+├── ai-agent/          # FastAPI + LangGraph + Groq AI
 └── README.md
 ```
 
 ## Features
 
-- Browse curated collection of ethnic wear
+- Browse curated collection of ethnic wear (42+ products)
 - Product categories: Sarees, Lehengas, Suits, Kurtis, Accessories
 - Detailed product information (fabric, color, stock)
+- AI-powered shopping assistant chatbot
 - Order management system
 - Responsive design with elegant UI
+- Real-time product search and recommendations
 
 ## Tech Stack
 
@@ -36,6 +39,13 @@ ecommerce/
 - TypeORM
 - PostgreSQL
 - TypeScript
+
+### AI Agent
+- FastAPI
+- LangGraph
+- LangChain
+- Groq (Llama 3.1)
+- Python
 
 ## Getting Started
 
@@ -207,12 +217,32 @@ cd oms-backend
 npm run build
 ```
 
+## Deployment
+
+Ready to deploy your store? We've got you covered!
+
+📚 **Deployment Guides**:
+- [STEP_BY_STEP_DEPLOYMENT.md](./STEP_BY_STEP_DEPLOYMENT.md) - Complete walkthrough
+- [DEPLOYMENT_CHECKLIST.md](./DEPLOYMENT_CHECKLIST.md) - Checklist format
+- [DEPLOYMENT_QUICK_REFERENCE.md](./DEPLOYMENT_QUICK_REFERENCE.md) - Quick commands
+- [DEPLOYMENT_DIAGRAM.md](./DEPLOYMENT_DIAGRAM.md) - Architecture overview
+
+**Hosting Stack** (All Free):
+- Frontend: Vercel
+- Backend: Render
+- AI Agent: Render
+- Database: Neon PostgreSQL
+
+**Estimated Time**: 30 minutes for complete deployment
+
 ## Contributing
 
 1. Create a feature branch
 2. Make your changes
 3. Test thoroughly
 4. Submit a pull request
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines.
 
 ## License
 

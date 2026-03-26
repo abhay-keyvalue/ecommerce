@@ -17,6 +17,9 @@ build/
 .env.test.local
 .env.production.local
 
+# Keep .env.production as reference (commented values)
+# .env.production files are safe to commit as they only contain templates
+
 # IDE and Editor files
 .vscode/
 .idea/
