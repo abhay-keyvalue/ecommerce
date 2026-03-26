@@ -258,7 +258,8 @@ Create a free UptimeRobot account:
 ### Database connection fails
 - Verify Neon database is active
 - Check connection string format
-- Ensure `?sslmode=require` is in connection string
+- SSL is automatically enabled for production (NODE_ENV=production)
+- For Neon, SSL is required and configured automatically
 
 ### AI Agent errors
 - Verify Groq API key is valid

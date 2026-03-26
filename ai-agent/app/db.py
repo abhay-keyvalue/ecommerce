@@ -13,12 +13,16 @@ DB_NAME = os.getenv("DB_NAME", "oms_database")
 
 def get_db_connection():
     try:
+        # SSL is required for Neon and other cloud databases
+        sslmode = 'require' if os.getenv('NODE_ENV') == 'production' or 'neon.tech' in DB_HOST else 'prefer'
+        
         conn = psycopg2.connect(
             host=DB_HOST,
             port=DB_PORT,
             user=DB_USER,
             password=DB_PASSWORD,
-            dbname=DB_NAME
+            dbname=DB_NAME,
+            sslmode=sslmode
         )
         return conn
     except Exception as e:

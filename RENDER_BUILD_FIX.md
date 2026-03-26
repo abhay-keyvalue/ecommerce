@@ -138,4 +138,28 @@ Once the build succeeds:
 
 ---
 
+## SSL Connection Error
+
+### Problem
+
+```
+error: connection is insecure (try using `sslmode=require`)
+```
+
+### Solution
+
+**Backend** (`oms-backend/src/config/database.ts`):
+```typescript
+ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
+```
+
+**AI Agent** (`ai-agent/app/db.py`):
+```python
+sslmode = 'require' if os.getenv('NODE_ENV') == 'production' or 'neon.tech' in DB_HOST else 'prefer'
+```
+
+This automatically enables SSL for production/cloud databases like Neon.
+
+---
+
 **Status**: ✅ Fixed in latest commit

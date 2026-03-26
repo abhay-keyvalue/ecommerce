@@ -11,9 +11,10 @@ export const AppDataSource = new DataSource({
   username: process.env.DB_USER || 'oms_user',
   password: process.env.DB_PASSWORD || 'oms_password',
   database: process.env.DB_NAME || 'oms_database',
-  synchronize: true, // Auto-create tables for dev
+  synchronize: true,
   logging: false,
   entities: [User, Product, Order, OrderItem],
   subscribers: [],
   migrations: [],
+  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
 });
