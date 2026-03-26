@@ -245,6 +245,11 @@ Create a free UptimeRobot account:
 - Verify all environment variables are set
 - Ensure database connection string is correct
 
+### TypeScript compilation errors during build
+- The build command includes `--include=dev` to install TypeScript types
+- `.npmrc` file ensures devDependencies are installed
+- If still failing, check that all @types packages are in package.json
+
 ### Frontend can't connect to backend
 - Check CORS settings in backend
 - Verify `VITE_API_URL` in Vercel environment variables
